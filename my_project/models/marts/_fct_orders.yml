@@ -1,0 +1,31 @@
+models:
+  - name: fct_orders
+    semantic_model:
+      enabled: true
+    agg_time_dimension: order_date
+    columns:
+      - name: order_id
+        entity:
+          type: primary
+      - name: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: order_date
+        dimension:
+          type: time
+        granularity: day
+      - name: store_name
+        entity:
+          type: foreign
+          name: store
+        dimension:
+          type: categorical
+    metrics:
+      - name: order_total
+        agg: sum
+        type: simple
+      - name: order_count
+        expr: 1
+        agg: sum
+        type: simple

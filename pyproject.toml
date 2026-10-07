@@ -1,0 +1,21 @@
+[project]
+name = "local-dbt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "dbt-core>=1.12.5",
+    "dbt-duckdb>=1.11.0",
+    "dbt-metricflow>=0.15.0",
+    "matplotlib>=3.11.2",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "nbstripout>=0.9.1",
+    "pandas>=3.0.6",
+]
